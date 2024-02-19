@@ -27,7 +27,7 @@ function addCart(Oeuvre){
       <main className="container-fluid">
          <div
             style={{
-               backgroundImage: "url(./../../public/images/Oeuvres/banier.jpg)",
+               backgroundImage: "url(images/Oeuvres/banier.jpg)",
                width: "100%",
                height: "200px",
             }}

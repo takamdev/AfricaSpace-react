@@ -29,7 +29,7 @@ function Home() {
                <div className="carousel-inner h-50">
                   <div className="carousel-item active">
                      <img
-                        src="../../public/images/home/Carousel/carouselItem1.jpg"
+                        src="images/home/Carousel/carouselItem1.jpg"
                         className="d-block"
                         alt="image"
                      />
@@ -39,7 +39,7 @@ function Home() {
                   </div>
                   <div className="carousel-item">
                      <img
-                        src="../../public/images/home/Carousel/carouselItem2.jpg"
+                        src="images/home/Carousel/carouselItem2.jpg"
                         className="d-block img-fluid"
                         alt="image"
                      />
@@ -49,7 +49,7 @@ function Home() {
                   </div>
                   <div className="carousel-item">
                      <img
-                        src="../../public/images/home/Carousel/carouselItem3.jpg"
+                        src="images/home/Carousel/carouselItem3.jpg"
                         className="d-block img-fluid"
                         alt="image"
                      />
@@ -59,7 +59,7 @@ function Home() {
                   </div>
                   <div className="carousel-item">
                      <img
-                        src="../../public/images/home/Carousel/carouselItem4.jpg"
+                        src="images/home/Carousel/carouselItem4.jpg"
                         className="d-block img-fluid"
                         alt="image"
                      />
@@ -69,7 +69,7 @@ function Home() {
                   </div>
                   <div className="carousel-item">
                      <img
-                        src="../../public/images/home/Carousel/carouselItem5.jpg"
+                        src="images/home/Carousel/carouselItem5.jpg"
                         className="d-block img-fluid"
                         alt="image"
                      />
@@ -79,7 +79,7 @@ function Home() {
                   </div>
                   <div className="carousel-item">
                      <img
-                        src="../../public/images/home/Carousel/carouselItem6.jpg"
+                        src="images/home/Carousel/carouselItem6.jpg"
                         className="d-block img-fluid"
                         alt="image"
                      />
@@ -89,7 +89,7 @@ function Home() {
                   </div>
                   <div className="carousel-item">
                      <img
-                        src="../../public/images/home/Carousel/carouselItem7.jpg"
+                        src="images/home/Carousel/carouselItem7.jpg"
                         className="d-block img-fluid"
                         alt="image"
                      />

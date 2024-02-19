@@ -7,7 +7,7 @@ function Footer() {
     <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <div className="col-md-4 d-flex align-items-center">
         <NavLink to="/" className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        <img src="./../../../../public/images/home/navBar/logo.png" alt="image" style={{width:" 70px"}}/>
+        <img src="images/home/navBar/logo.png" alt="image" style={{width:" 70px"}}/>
         </NavLink>
         <span className="mb-3 mb-md-0  fw-bold text-white">&copy; ART AFRICAIN - MASQUES D'AFRIQUE <i>2023</i> </span>
       </div>

@@ -286,7 +286,7 @@ function NavBar() {
                <div className="container-fluid w-100">
                   <NavLink className="navbar-brand" to="/">
                      <img
-                        src="./../../../../public/images/home/navBar/logo.png"
+                        src="images/home/navBar/logo.png"
                         style={{ width: "70px" }}
                         alt="image"
                      />
@@ -341,7 +341,7 @@ function NavBar() {
                               className="dropdown-menu"
                               style={{
                                  backgroundImage:
-                                    "url(./../../../../public/images/home/navBar/bgNavBar.jpg)",
+                                    "url(images/home/navBar/bgNavBar.jpg)",
                               }}
                            >
                               {/* <!-- Button trigger modal --> */}

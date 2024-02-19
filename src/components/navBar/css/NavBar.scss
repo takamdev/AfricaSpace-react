@@ -1,0 +1,201 @@
+@media screen and (max-width:990px) {
+ 
+ .modal-body{
+       width: 80% !important;
+       
+   }
+  
+
+
+}
+@media screen and (max-width:430px) {
+   .modal-body{
+       width: 100% !important;
+       margin: 40% 0px 0px 0px !important;
+       form{
+           padding: 40px 0px !important;
+       }
+       
+   }
+  
+   
+}
+
+
+header {
+
+   z-index: 10000;
+   .navbar {
+      .panier{
+         position: relative;
+      }
+   .compteur{
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      text-align: center;
+      background-color: red;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+   }
+      background-image: url(./../../../../public/images/home/navBar/bgNavBar.jpg);
+      width: 100%;
+      transition: all ease-in-out 0.5s;
+    
+
+      input {
+         &::placeholder {
+            opacity: 0.5;
+         }
+      }
+      a.active {
+        color: yellow !important;
+     }
+      a:not(a.dropdown-item) {
+        
+         font-weight: bold;
+         color: white;
+
+         &:visited {
+            color: white;
+         }
+         &:hover {
+            color: yellow;
+         }
+      }
+      button.dropdown-item {
+         color: white;
+         font-weight: bold;
+         &:hover {
+            background-color: initial;
+            color: yellow;
+         }
+      }
+   }
+   @media screen and (max-width:990px) {
+      .panier{
+         position: absolute !important;
+         right: 35px !important;
+         top: 10px !important;
+     }
+      
+     .compteur{
+      position: absolute !important;
+      right: 25px !important;
+      top: 0px !important;
+     
+     
+   }
+  
+  
+  }
+}
+
+
+
+.modal-content{
+    background-image: url(./../../../../public/images/home/navBar/bgNavBar.jpg);
+
+    .modal-title{
+        color: yellow;
+    }
+    .btn-close{
+        color: white;
+    }
+}
+
+
+.Modal{
+
+
+margin-left: 17%;
+max-width: 1500px;
+height: auto;
+width: 50%;
+
+border-radius: 20px;
+
+text-align: center;
+
+form{
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 5px;
+padding:40px;
+h1{
+font-style: italic;
+color: white;
+}
+div{
+display: flex;
+margin-top: 20px;
+gap: 20px;
+a{
+
+border: solid 1px antiquewhite;
+background-color: white;
+border-radius: 5px;
+width: 20px;
+
+}
+}
+p{
+color: white;
+filter: contrast(100%);
+}
+label{
+color: white;
+
+a{
+    color: white;
+}
+}
+
+label:nth-child(3){
+
+margin-top: 20px;
+opacity: .5;
+
+}
+input{
+
+width: 80%;
+height: 40px;
+outline: none;
+padding-left: 10px;
+border: none;
+border-radius: 5px;
+background-color: antiquewhite;
+
+}
+.redirigerConnexion{
+background-image: url(./../../../../public/images/home/navBar/bgNavBar.jpg);
+color: white;
+border: none;
+text-decoration-line: underline;
+width: 230px;
+}
+.soumet{
+   
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 150px;
+    height: 40px;
+    font-style: italic;
+    }
+ 
+
+}
+
+}
+h1{
+    font-style: italic;
+    color: white;
+}

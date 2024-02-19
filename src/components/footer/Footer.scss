@@ -1,0 +1,37 @@
+.footer{
+    .active{
+        color: yellow;
+    }
+    button{
+        transition: all ease-in-out .1s;
+         font-weight: bold;
+          background-color: black;
+           color: white;
+            border: none;
+             padding-top: 6.5px;
+             &:hover{
+                color:yellow;
+             }
+             @media screen and (max-width:890px){
+                font-size: 13px;
+            }
+    }
+    background-color: black;
+    a{
+        font-size: 15px;
+        @media screen and (max-width:890px){
+            font-size: 13px;
+        }
+        font-weight: bold;
+        color: white;
+       &:hover{
+        color:yellow;
+       }
+    }
+    
+   
+       
+        transform: scale(1.01);
+        border-radius: 10px;
+    
+}

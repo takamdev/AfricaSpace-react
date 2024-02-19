@@ -1,0 +1,162 @@
+@media screen and (max-width: 990px) {
+  .modal-body {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 430px) {
+  .modal-body {
+    width: 100% !important;
+    margin: 40% 0px 0px 0px !important;
+  }
+  .modal-body form {
+    padding: 40px 0px !important;
+  }
+}
+header {
+  z-index: 10000;
+}
+header .navbar {
+  background-image: url(./../../../../public/images/home/navBar/bgNavBar.jpg);
+  width: 100%;
+  transition: all ease-in-out 0.5s;
+}
+header .navbar .panier {
+  position: relative;
+}
+header .navbar .compteur {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  text-align: center;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+header .navbar input::-moz-placeholder {
+  opacity: 0.5;
+}
+header .navbar input::placeholder {
+  opacity: 0.5;
+}
+header .navbar a.active {
+  color: yellow !important;
+}
+header .navbar a:not(a.dropdown-item) {
+  font-weight: bold;
+  color: white;
+}
+header .navbar a:not(a.dropdown-item):visited {
+  color: white;
+}
+header .navbar a:not(a.dropdown-item):hover {
+  color: yellow;
+}
+header .navbar button.dropdown-item {
+  color: white;
+  font-weight: bold;
+}
+header .navbar button.dropdown-item:hover {
+  background-color: initial;
+  color: yellow;
+}
+@media screen and (max-width: 990px) {
+  header .panier {
+    position: absolute !important;
+    right: 35px !important;
+    top: 10px !important;
+  }
+  header .compteur {
+    position: absolute !important;
+    right: 25px !important;
+    top: 0px !important;
+  }
+}
+
+.modal-content {
+  background-image: url(./../../../../public/images/home/navBar/bgNavBar.jpg);
+}
+.modal-content .modal-title {
+  color: yellow;
+}
+.modal-content .btn-close {
+  color: white;
+}
+
+.Modal {
+  margin-left: 17%;
+  max-width: 1500px;
+  height: auto;
+  width: 50%;
+  border-radius: 20px;
+  text-align: center;
+}
+.Modal form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 40px;
+}
+.Modal form h1 {
+  font-style: italic;
+  color: white;
+}
+.Modal form div {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+.Modal form div a {
+  border: solid 1px antiquewhite;
+  background-color: white;
+  border-radius: 5px;
+  width: 20px;
+}
+.Modal form p {
+  color: white;
+  filter: contrast(100%);
+}
+.Modal form label {
+  color: white;
+}
+.Modal form label a {
+  color: white;
+}
+.Modal form label:nth-child(3) {
+  margin-top: 20px;
+  opacity: 0.5;
+}
+.Modal form input {
+  width: 80%;
+  height: 40px;
+  outline: none;
+  padding-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: antiquewhite;
+}
+.Modal form .redirigerConnexion {
+  background-image: url(./../../../../public/images/home/navBar/bgNavBar.jpg);
+  color: white;
+  border: none;
+  text-decoration-line: underline;
+  width: 230px;
+}
+.Modal form .soumet {
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 150px;
+  height: 40px;
+  font-style: italic;
+}
+
+h1 {
+  font-style: italic;
+  color: white;
+}/*# sourceMappingURL=NavBar.css.map */

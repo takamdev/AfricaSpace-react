@@ -2,12 +2,40 @@ import React from "react";
 import "./../css/NavBar.css";
 import { Link, NavLink } from "react-router-dom";
 import { useStore } from "../../../../store.jsx";
-import { MdDelete } from "react-icons/md"; 
-import { MdOutlineRemove } from "react-icons/md"; 
-import { AiOutlinePlus } from "react-icons/ai"; 
+import { MdDelete } from "react-icons/md";
+import { MdOutlineRemove } from "react-icons/md";
+import { AiOutlinePlus } from "react-icons/ai";
+import Connexion from "../../Connexion.jsx";
+import Inscription from "../../Inscription.jsx";
 
 function NavBar() {
-    let CARD = useStore((state)=>state.CARD)
+   let CARD = useStore((state) => state.CARD);
+   let updateCart = useStore((state) => state.updateCart);
+   function increQte(id) {
+      let getProduit = CARD.find((item) => item.id === id);
+
+      if (getProduit.qte < 10) {
+         let newProduitList = CARD.map((item) => {
+            return item.id === id ? { ...item, qte: item.qte + 1 } : item;
+         });
+         updateCart(newProduitList);
+      }
+   }
+
+   function decreQte(id) {
+      let getProduit = CARD.find((item) => item.id === id);
+
+      if (getProduit.qte > 1) {
+         let newProduitList = CARD.map((item) => {
+            return item.id === id ? { ...item, qte: item.qte - 1 } : item;
+         });
+         updateCart(newProduitList);
+      }
+   }
+   function removeProduit(id) {
+      let newProduitList = CARD.filter((item) => item.id !== id);
+      updateCart(newProduitList);
+   }
    return (
       <>
          {/* madal panier  */}
@@ -25,7 +53,7 @@ function NavBar() {
                <div className="modal-content">
                   <div className="modal-header">
                      <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                       Panier
+                        Panier
                      </h1>
                      <button
                         type="button"
@@ -37,44 +65,100 @@ function NavBar() {
                      </button>
                   </div>
                   <div className="modal-body row text-white">
-                     <div className="col-9">
-                              {
-                              CARD.length === 0 ? ( <p className='display-6'>Aucun produit dans le Pannier</p> ):(
-                              <table className="table mt-4">
-                              <thead>
-                                 <tr>
-                                    <th scope="col">Nom</th>
-                                    <th scope="col">Prix</th>
-                                    <th scope="col">Category</th>
-                                    <th scope="col">Image</th>
-                                    <th scope="col">Action</th>
-                                 </tr>
-                              </thead>
-                        
-                              <tbody>
-                              
-                                 {
-                                    CARD.map((item,index)=>{
-                                       return <tr key={index} style={{height:"200px !important",backgroundColor:"red"}}>
-                                                   <th scope="row">{item.title}</th>
-                                                   <td>{item.price} FCFA</td>
-                                                   <td>{}</td>
-                                                   <td> <img src={`/${item.img}`} alt='image' width={60} height={60}/> </td>
-                                                   <td className=" d-flex">
-                                                      <button className="btn btn-success me-1"  onClick={()=>increQte(item.id)}> <AiOutlinePlus /></button>
-                                                      <p className="text-center mt-3 ">{item.qte}</p>
-                                                      <button className="btn btn-primary ms-1" onClick={()=>decreQte(item.id)}> <MdOutlineRemove /></button>
-                                                      <button className="btn btn-danger ms-5 me-1" onClick={()=>removeProduit(item.id)} ><MdDelete /></button>
-                                                   </td>
-                                                   
-                                             </tr>
-                                    })
-                                 }
-                                 
-                              </tbody>
+                     <div className="row">
+                        {CARD.length === 0 ? (
+                           <p className="display-6 col-12">
+                              Aucun produit dans le Pannier
+                           </p>
+                        ) : (
+                           <>
+                              <table className="table mt-4 col-8">
+                                 <thead className="col-12">
+                                    <tr>
+                                       <th scope="col">Nom</th>
+                                       <th scope="col">Prix</th>
+                                       <th scope="col">Category</th>
+                                       <th scope="col">Image</th>
+                                       <th scope="col">Action</th>
+                                    </tr>
+                                 </thead>
+
+                                 <tbody className="col-8">
+                                    {CARD.map((item, index) => {
+                                       return (
+                                          <tr
+                                             key={index}
+                                             style={{
+                                                height: "200px !important",
+                                                backgroundColor: "red",
+                                             }}
+                                          >
+                                             <th scope="row">{item.title}</th>
+                                             <td>{item.price} FCFA</td>
+                                             <td>{}</td>
+                                             <td>
+                                                {" "}
+                                                <img
+                                                   src={`/${item.img}`}
+                                                   alt="image"
+                                                   width={60}
+                                                   height={60}
+                                                />{" "}
+                                             </td>
+                                             <td className=" d-flex">
+                                                <button
+                                                   className="btn btn-success me-1"
+                                                   onClick={() =>
+                                                      increQte(item.id)
+                                                   }
+                                                >
+                                                   {" "}
+                                                   <AiOutlinePlus />
+                                                </button>
+                                                <p className="text-center mt-3 ">
+                                                   {item.qte}
+                                                </p>
+                                                <button
+                                                   className="btn btn-primary ms-1"
+                                                   onClick={() =>
+                                                      decreQte(item.id)
+                                                   }
+                                                >
+                                                   {" "}
+                                                   <MdOutlineRemove />
+                                                </button>
+                                                <button
+                                                   className="btn btn-danger ms-5 me-1"
+                                                   onClick={() =>
+                                                      removeProduit(item.id)
+                                                   }
+                                                >
+                                                   <MdDelete />
+                                                </button>
+                                             </td>
+                                          </tr>
+                                       );
+                                    })}
+                                 </tbody>
                               </table>
-                              )
-                           }
+                              <div className="col-4">
+                                 <p className=" prixTotal">
+                                    total:
+                                    {CARD.reduce((somme, item) => {
+                                       return (
+                                          somme +
+                                          item.qte *
+                                             item.price.replaceAll(" ", "")
+                                       );
+                                    }, 0)}
+                                    {" FCFA"}
+                                 </p>
+                                 <button className="btn btn-warning">
+                                    Commandé
+                                 </button>
+                              </div>
+                           </>
+                        )}
                      </div>
                   </div>
                   <button
@@ -88,198 +172,10 @@ function NavBar() {
                </div>
             </div>
          </div>
-
-         {/* <!-- Modal pour la connexion --> */}
-         <div
-            className="modal fade modal-xl"
-            id="connexion"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            tabIndex="-1"
-            aria-labelledby="staticBackdropLabel"
-            aria-hidden="true"
-         >
-            <div className="modal-dialog ">
-               <div className="modal-content">
-                  <div className="modal-header">
-                     <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                        Se Connecter
-                     </h1>
-                     <button
-                        type="button"
-                        className="btn btn-warning"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                     >
-                        <i className="fa-solid fa-xmark"></i>
-                     </button>
-                  </div>
-                  <div className="Modal modal-body">
-                     <form>
-                        <h1>Connecter-vous</h1>
-                        <div>
-                           <a href="#">
-                              <i className="fa-brands fa-google"></i>
-                           </a>
-                           <a href="#">
-                              <i className="fa-brands fa-facebook"></i>
-                           </a>
-                           <a href="#">
-                              <i className="fa-brands fa-linkedin"></i>
-                           </a>
-                           <a href="#">
-                              <i className="fa-brands fa-instagram"></i>
-                           </a>
-                        </div>
-                        <p>
-                           entrez vos information personnelle pour vous
-                           connecter
-                        </p>
-                        <input
-                           type="email"
-                           id="name"
-                           placeholder="toto@example.com"
-                           required
-                        />
-                        <input
-                           type="password"
-                           id="password"
-                           placeholder="entrez le mot de passe"
-                           style={{ marginTop: "20px" }}
-                           required
-                        />
-                        <label className="d-flex gap-3">
-                           <button
-                              className="redirigerConnexion"
-                              type="button"
-                              data-bs-toggle="modal"
-                              data-bs-target="#creationDeCompte"
-                           >
-                              vous n`avez pas de compte?
-                           </button>
-                        </label>
-                        <button className="soumet" type="submit">
-                           Connexion
-                        </button>
-                     </form>
-                  </div>
-                  <button
-                     type="button"
-                     className="btn btn-warning ms-auto me-1 mb-1"
-                     data-bs-dismiss="modal"
-                     style={{ width: "100px" }}
-                  >
-                     Fermer
-                  </button>
-               </div>
-            </div>
-         </div>
-
+         {/* pour la connexion */}
+         <Connexion />
          {/* <!-- modal pour la creation de compte --> */}
-
-         <div
-            className="modal fade  modal-xl"
-            id="creationDeCompte"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            tabIndex="-1"
-            aria-labelledby="staticBackdropLabel"
-            aria-hidden="true"
-         >
-            <div className="modal-dialog">
-               <div className="modal-content">
-                  <div className="modal-header">
-                     <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                        Cree un Compte
-                     </h1>
-                     <button
-                        type="button"
-                        className="btn btn-warning"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                     >
-                        <i className="fa-solid fa-xmark"></i>
-                     </button>
-                  </div>
-                  <div className="Modal modal-body">
-                     <form>
-                        <h1>Cree Un Compte</h1>
-                        <div>
-                           <a href="#">
-                              <i className="fa-brands fa-google"></i>
-                           </a>
-                           <a href="#">
-                              <i className="fa-brands fa-facebook"></i>
-                           </a>
-                           <a href="#">
-                              <i className="fa-brands fa-linkedin"></i>
-                           </a>
-                           <a href="#">
-                              <i className="fa-brands fa-instagram"></i>
-                           </a>
-                        </div>
-                        <p>
-                           entrez vos information personnelle pour cree le
-                           Compte
-                        </p>
-                        <input
-                           type="text"
-                           id="name"
-                           placeholder="entrez votre nom"
-                           style={{ marginTop: "20px" }}
-                           required
-                        />
-                        <input
-                           type="text"
-                           id="UserName"
-                           placeholder="Choisir un nom d`utilisateur"
-                           required
-                        />
-                        <input
-                           type="email"
-                           id="email"
-                           placeholder="toto@example.com"
-                           required
-                        />
-                        <input
-                           type="password"
-                           id="password"
-                           placeholder="creez un mot de passe"
-                           required
-                        />
-                        <input
-                           type="password"
-                           id="password"
-                           placeholder="repeter le mot de passe"
-                           required
-                        />
-                        <label className="d-flex gap-3">
-                           <button
-                              className="redirigerConnexion"
-                              type="button"
-                              data-bs-toggle="modal"
-                              data-bs-target="#connexion"
-                           >
-                              vous avez deja un compte?
-                           </button>
-                        </label>
-
-                        <button className="soumet" type="submit">
-                           Inscription
-                        </button>
-                     </form>
-                  </div>
-                  <button
-                     type="button"
-                     className="btn btn-warning ms-auto me-1 mb-1"
-                     data-bs-dismiss="modal"
-                     style={{ width: "100px" }}
-                  >
-                     Fermer
-                  </button>
-               </div>
-            </div>
-         </div>
+         <Inscription />
 
          <header className="mb-0">
             <nav className="navbar navbar-expand-lg container-fluid">

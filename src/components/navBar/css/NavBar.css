@@ -82,6 +82,13 @@ header .navbar button.dropdown-item:hover {
 .modal-content .btn-close {
   color: white;
 }
+.modal-content .prixTotal {
+  color: yellow;
+  font-size: 30px;
+  position: absolute;
+  right: 40px;
+  top: 0;
+}
 
 .Modal {
   margin-left: 17%;

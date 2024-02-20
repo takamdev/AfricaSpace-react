@@ -1,11 +1,27 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { data } from "../../data.jsx";
+import { useStore } from "../../store.jsx";
+import "./OuvreItem.css"
 function OeuveItem() {
    let { id } = useParams();
    let produit = data[0].find(item=>item.id===id)
 
-
+   const updateProduit = useStore((state)=>state.updateProduit)
+   let CARD = useStore((state)=>state.CARD)
+   
+   function addCart(Oeuvre){
+   
+     let isExist = CARD.findIndex(item=>item.id===Oeuvre.id)
+    if(isExist=== -1){
+     updateProduit(Oeuvre)
+    }
+   
+   
+   
+   
+   }
+   
    return (
       <section className="container-fluid ms-auto me-auto">
          <div className="card mb-3 container">
@@ -15,6 +31,8 @@ function OeuveItem() {
                      src={`/${produit.img}`}
                      className="img-fluid rounded-start"
                      alt="image"
+                     width={400}
+                    style={{height:"400px"}}
                   />
                </div>
                <div className="col-md-8">
@@ -31,14 +49,14 @@ function OeuveItem() {
                         <p>
                            {" "}
                            NOTE:
-                           <span className="etoile">★</span>
-                           <span className="etoile">★</span>
-                           <span className="etoile">★</span>
-                           <span className="etoile">★</span>
-                           <span className="etoile">★</span>
+                           <span className="etoile note">★</span>
+                           <span className="etoile note">★</span>
+                           <span className="etoile note">★</span>
+                           <span className="etoile note">★</span>
+                           <span className="etoile note">★</span>
                         </p>
                         <p>
-                           <button type="button" className="ajoutPanier ">
+                           <button type="button" onClick={()=>addCart(produit)} className="ajoutPanier ">
                               Ajouter au Panier
                            </button>
                         </p>
@@ -93,7 +111,7 @@ function OeuveItem() {
                rows="3"
             ></textarea>
             <button type="button" className="btn btn-dark ok">
-               ok
+               Envoyer
             </button>
          </div>
       </section>

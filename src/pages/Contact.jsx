@@ -1,10 +1,42 @@
 import React from 'react'
 import Footer from '../components/footer/Footer.jsx'
 import "./css/contact.css"
+
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+
+const schema = yup
+.object({
+    Nom: yup.string().required('ce champ est oubligatoire'),
+    email: yup.string().required('ce champ est oubligatoire') .matches(/^\+237\d{9}$/, "entrez un numéro valide"),
+    Subject: yup.string().required('ce champ est oubligatoire'),
+    Message: yup.string(),
+  
+  
+})
+.required()
+
+
 function Contact() {
+
+
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm({
+        resolver: yupResolver(schema),
+      })
+      const onSubmit = (data) =>console.log(data);
+       
+  
+
+
   return (
      
-<main className='mainContact container-fluid'>
+<main className='mainContact container-fluid' >
 <div className="contact-site">
     
     <div className="contact-body bg-light" >
@@ -37,17 +69,18 @@ function Contact() {
        
     </div>
 
-    <form className="container ">
+    <form className="container" onSubmit={handleSubmit(onSubmit)}>
         <p className="text-center display-3 fw-light text-white">OU</p>
         <div className="mb-3 form-setting d-flex flex-column gap-3 position-relative">
 
-          <input type="text" placeholder="name"/>
-
-          <input type="email" id="email" placeholder="email" />
-
-          <input type="text" placeholder="Subject" />
-          
-          <textarea id="message" cols="30" row="3" placeholder="Message" />
+          <input type="text" {...register("Nom")} placeholder="name"/>
+          <p className="text-danger">{errors.Nom?.message}</p>
+          <input type="text" placeholder="email" {...register("email")}  />
+          <p className="text-danger">{errors.email?.message}</p>
+          <input type="text" placeholder="Subject" {...register("Subject")}  />
+          <p className="text-danger">{errors.Subject?.message}</p>
+          <textarea id="message" placeholder="facultatif" cols="30" row="3"  {...register("Message")}  />
+          <p className="text-danger">{errors.Message?.message}</p>
         </div>
         <button type="submit" className="btn bg-warning text-black"> Envoyer</button>
     </form>

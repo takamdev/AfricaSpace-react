@@ -36,7 +36,7 @@ function Contact() {
 
   return (
      
-<main className='mainContact container-fluid' >
+<main className='mainContact container-fluid'>
 <div className="contact-site">
     
     <div className="contact-body bg-light" >
@@ -73,13 +73,13 @@ function Contact() {
         <p className="text-center display-3 fw-light text-white">OU</p>
         <div className="mb-3 form-setting d-flex flex-column gap-3 position-relative">
 
-          <input type="text" {...register("Nom")} placeholder="name"/>
+          <input className='form-control' type="text" {...register("Nom")} placeholder="name"/>
           <p className="text-danger">{errors.Nom?.message}</p>
-          <input type="text" placeholder="email" {...register("email")}  />
+          <input className='form-control' type="text" placeholder="email" {...register("email")}  />
           <p className="text-danger">{errors.email?.message}</p>
-          <input type="text" placeholder="Subject" {...register("Subject")}  />
+          <input className='form-control' type="text" placeholder="Subject" {...register("Subject")}  />
           <p className="text-danger">{errors.Subject?.message}</p>
-          <textarea id="message" placeholder="facultatif" cols="30" row="3"  {...register("Message")}  />
+          <textarea className='form-control' id="message" placeholder="facultatif" cols="30" row="3"  {...register("Message")}  />
           <p className="text-danger">{errors.Message?.message}</p>
         </div>
         <button type="submit" className="btn bg-warning text-black"> Envoyer</button>

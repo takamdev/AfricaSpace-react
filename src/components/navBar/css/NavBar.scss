@@ -29,7 +29,7 @@ header {
          height: 20px;
          border-radius: 100%;
       }
-      background-image: url(./../../../../public/images/home/navBar/bgNavBar.jpg);
+      background-image: url(images/home/navBar/bgNavBar.jpg);
       width: 100%;
       transition: all ease-in-out 0.5s;
 
@@ -77,7 +77,7 @@ header {
 }
 
 .modal-content {
-   background-image: url(./../../../../public/images/home/navBar/bgNavBar.jpg);
+   background-image: url(images/home/navBar/bgNavBar.jpg);
 
    .modal-title {
       color: yellow;
@@ -153,7 +153,7 @@ header {
          background-color: antiquewhite;
       }
       .redirigerConnexion {
-         background-image: url(./../../../../public/images/home/navBar/bgNavBar.jpg);
+         background-image: url(images/home/navBar/bgNavBar.jpg);
          color: white;
          border: none;
          text-decoration-line: underline;

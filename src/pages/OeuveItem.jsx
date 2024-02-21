@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { data } from "../../data.jsx";
 import { useStore } from "../../store.jsx";
@@ -6,10 +6,16 @@ import "./OuvreItem.css"
 function OeuveItem() {
    let { id } = useParams();
    let produit = data[0].find(item=>item.id===id)
-
+   const [commantaireValue , setCommantaireValue] = useState("")
+   const [Commantaire , setCommantaire] = useState([])
    const updateProduit = useStore((state)=>state.updateProduit)
    let CARD = useStore((state)=>state.CARD)
    
+   function ubdateCommantaire(){
+      setCommantaire(v=>[...v, <p key={indexedDB}>{commantaireValue}</p>  ])
+   }
+
+
    function addCart(Oeuvre){
    
      let isExist = CARD.findIndex(item=>item.id===Oeuvre.id)
@@ -105,14 +111,25 @@ function OeuveItem() {
             <label htmlFor="exampleFormControlTextarea1" className="form-label">
                Commentaire
             </label>
-            <textarea
+            <textarea value={commantaireValue}
+             onChange={(e)=>setCommantaireValue(e.target.value)}
                className="form-control"
                id="exampleFormControlTextarea1"
                rows="3"
             ></textarea>
-            <button type="button" className="btn btn-dark ok">
+            <button type="button" className="btn btn-dark ok" onClick={ubdateCommantaire}>
                Envoyer
             </button>
+            <br />
+
+     
+            {
+              Commantaire
+            }
+          
+            
+
+
          </div>
       </section>
    );

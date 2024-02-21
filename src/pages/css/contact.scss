@@ -3,9 +3,7 @@
     width: 100%;
     height: auto;
     align-items: center;
-    background-image: url(./../../public/images/home/NavBar/bgNavBar.jpg);
-
-   
+    background-image: url("/public/images/home/NavBar/bgNavBar.jpg");
   }
 
   iframe{
@@ -19,13 +17,7 @@
  }
   .form-setting{
     background-image: inherit;
-   
-   
     border-radius: 10px;
-    input,textarea{
-
-      outline: none;
-    }
     textarea{
       height: 70px;
     }

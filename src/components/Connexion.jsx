@@ -6,7 +6,7 @@ import * as yup from "yup"
 
 const schema = yup
 .object({
-  email: yup.string().required('ce champ est oubligatoire').min(2,'minimun 2 carractères requis'),
+  email: yup.string().required('ce champ est oubligatoire').matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,"entrez une address email valide"),
   password: yup.string().required('ce champ est oubligatoire'),
   
   

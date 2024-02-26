@@ -1,8 +1,6 @@
-import React from "react";
-import Card from "../components/Card.jsx";
+
 import { dataHomme } from "../../dataHome.jsx";
-import "./css/Home.css";
-import Footer from "./../components/footer/Footer.jsx";
+import Footer from "./../components/Footer.jsx";
 
 function Home() {
 
@@ -152,7 +150,7 @@ function Home() {
                               paddingTop: "9px",
                            }}
                         />
-                        <div className="card-body">
+                        <div className="card-body overflow-y-auto">
                            <h5 className="card-title">{item.title}</h5>
                            <p className="card-text fs-6">{item.description}
                            </p>

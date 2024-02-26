@@ -1,10 +1,9 @@
 import React from "react";
-import "./css/Oeuvres.css";
+
 import { data } from "../../data.jsx";
 import Card from "../components/Card.jsx";
-import { BsCartPlusFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
-import Footer from "../components/footer/Footer.jsx";
+
+import Footer from "../components/Footer.jsx";
 import { useStore } from "../../store.jsx";
 function Oeuvres() {
    const updateProduit = useStore((state) => state.updateProduit);

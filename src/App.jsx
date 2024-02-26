@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx'
 import Oeuvres from './pages/Oeuvres.jsx'
 import Contact from './pages/Contact.jsx'
 import OeuveItem from './pages/OeuveItem.jsx'
+import EspaceArtiste from './pages/EspaceArtiste.jsx'
 
 function App() {
   let route = createBrowserRouter([
@@ -26,6 +27,9 @@ function App() {
         },{
             path:"OeuveItem/:id",
             element:<OeuveItem/>
+        },{
+          path:'EspaceArtiste',
+          element:<EspaceArtiste/>
         }
       ]
     }

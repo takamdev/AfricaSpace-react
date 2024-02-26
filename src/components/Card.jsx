@@ -1,7 +1,7 @@
 import { BsCartPlusFill } from "react-icons/bs"; 
 import { Link} from 'react-router-dom'
 import { useStore } from "../../store.jsx";
-import "./card.css"
+
 
 function Card({Oeuvre}) {
 const updateProduit = useStore((state)=>state.updateProduit)

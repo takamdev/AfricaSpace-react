@@ -16,7 +16,8 @@ export const data = [
          Profondeur : "11,5 cm",
          Poids : "4,5 kg",
          ref: "mab 5" ,
-         poidTotal:"6,5 kg "
+         poidTotal:"6,5 kg ",
+         category:"Sculpture"
       },
       {
          id: "d2",
@@ -31,7 +32,8 @@ export const data = [
          Profondeur : "18  cm",
          Poids : "3,100 kg",
          ref: "mab 586" ,
-         poidTotal:"6 kg "
+         poidTotal:"6 kg ",
+         category:"Sculpture"
       },
       {
          id: "d3",
@@ -53,7 +55,8 @@ export const data = [
          Profondeur : "14   cm",
          Poids : "1,100  kg",
          ref: "mab 486" ,
-         poidTotal:"2,8 kg "
+         poidTotal:"2,8 kg ",
+         category:"Sculpture"
       },
       {
          id: "d4",
@@ -72,7 +75,8 @@ export const data = [
          Profondeur : "12  cm",
          Poids : "1,700  kg",
          ref: "mab 506" ,
-         poidTotal:"4 kg "
+         poidTotal:"4 kg ",
+         category:"Sculpture"
       },
    ],
    /*
@@ -87,6 +91,7 @@ export const data = [
          price: ``,
          smallDescription:"Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.",
          img: `images/oeuvres/sculture/sculture-annimal/animal1.jpg`,
+         category:"Sculpture"
       },
       {
          id: "d6",
@@ -95,6 +100,7 @@ export const data = [
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,
          price: ``,
          img: `images/oeuvres/sculture/sculture-annimal/animal2.jpg`,
+         category:"Sculpture"
       },
       {
          id: "d7",
@@ -103,6 +109,7 @@ export const data = [
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,
          price: ``,
          img: `images/oeuvres/sculture/sculture-annimal/animal3.jpg`,
+         category:"Sculpture"
       },
       {
          id: "d8",
@@ -111,6 +118,7 @@ export const data = [
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,
          price: ``,
          img: `images/oeuvres/sculture/sculture-annimal/animal4.jpg`,
+         category:"Sculpture"
       },
       {
          id: "d9",
@@ -119,6 +127,7 @@ export const data = [
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,
          price: ``,
          img: `images/oeuvres/sculture/sculture-annimal/animal5.jpg`,
+         category:"Sculpture"
       },
    ],[
       /*
@@ -131,6 +140,7 @@ export const data = [
          description: ``,
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,         price: "250 000",
          img: "images/oeuvres/sculture/Tabouret-Sculpté/tabouret1.jpg",
+         category:"Sculpture"
       },
       {
          id: "d11",
@@ -138,6 +148,7 @@ export const data = [
          description: ``,
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,         price: "250 000",
          img: "images/oeuvres/sculture/Tabouret-Sculpté/tabouret2.jpg",
+         category:"Sculpture"
       },
       {
          id: "d12",
@@ -145,6 +156,7 @@ export const data = [
          description: ``,
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,         price: "250 000",
          img: "images/oeuvres/sculture/Tabouret-Sculpté/tabouret3.jpg",
+         category:"Sculpture"
       },
       {
          id: "d13",
@@ -152,6 +164,7 @@ export const data = [
          description: ``,
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,         price: "250 000",
          img: "images/oeuvres/sculture/Tabouret-Sculpté/tabouret4.jpg",
+         category:"Sculpture"
       },
       {
          id: "d14",
@@ -159,6 +172,7 @@ export const data = [
          description: ``,
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,         price: "250 000",
          img: "images/oeuvres/sculture/Tabouret-Sculpté/tabouret5.jpg",
+         category:"Sculpture"
       }
    ],
    /*Sculpture Humaine
@@ -171,6 +185,7 @@ export const data = [
          description: ``,
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,         price: "250 000",
          img: "images/oeuvres/sculture/Sculture-Humaine/humain1.jpg",
+         category:"Sculpture"
       },
       {
          id: "d16",
@@ -178,6 +193,7 @@ export const data = [
          description: ``,
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,         price: "250 000",
          img: "images/oeuvres/sculture/Sculture-Humaine/humain2.jpg",
+         category:"Sculpture"
       },
       {
          id: "d17",
@@ -185,6 +201,7 @@ export const data = [
          description: ``,
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,         price: "250 000",
          img: "images/oeuvres/sculture/Sculture-Humaine/humain3.jpg",
+         category:"Sculpture"
       },
       {
          id: "d18",
@@ -192,6 +209,7 @@ export const data = [
          description: ``,
          smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,         price: "250 000",
          img: "images/oeuvres/sculture/Sculture-Humaine/humain4.jpg",
+         category:"Sculpture"
       },
       {
         id: "d19",
@@ -199,6 +217,7 @@ export const data = [
         description: ``,
         smallDescription: `Petite statuette en bronze de décoration africaine du Burkina Faso, fabriquée à la technique du moule à la cire perdue. Pièce unique.`,        price: "250 000",
         img: "images/oeuvres/sculture/Sculture-Humaine/humain5.jpg",
+        category:"Sculpture"
      }
    ],
 ];

@@ -1,16 +1,46 @@
-import React from "react";
-import "./../css/NavBar.css";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useStore } from "../../../../store.jsx";
+import { useStore } from "../../store.jsx";
 import { MdDelete } from "react-icons/md";
 import { MdOutlineRemove } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
-import Connexion from "../../Connexion.jsx";
-import Inscription from "../../Inscription.jsx";
+import Connexion from "./Connexion.jsx";
+import Inscription from "./Inscription.jsx";
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+
+
+const schema = yup
+.object({
+    Nom: yup.string().required('ce champ est oubligatoire'),
+    email: yup.string().required('ce champ est oubligatoire').matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,"entrez une address email valide"),
+    telephone: yup.string().required('ce champ est oubligatoire').matches(/^\+237\d{9}$/, "entrez un numéro valide"),
+    ville: yup.string().min(4,"minimun 4 caractère"),
+  
+  
+})
+.required()
+
 
 function NavBar() {
+
+
+   const [isCommande, setIsCommande] = useState(false);
    let CARD = useStore((state) => state.CARD);
    let updateCart = useStore((state) => state.updateCart);
+
+   const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      resolver: yupResolver(schema),
+    })
+    const onSubmit = (data) =>console.log(data);
+     
+
+
    function increQte(id) {
       let getProduit = CARD.find((item) => item.id === id);
 
@@ -35,6 +65,10 @@ function NavBar() {
    function removeProduit(id) {
       let newProduitList = CARD.filter((item) => item.id !== id);
       updateCart(newProduitList);
+   }
+
+   function commader(){
+      updateCart([]);
    }
    return (
       <>
@@ -72,8 +106,11 @@ function NavBar() {
                            </p>
                         ) : (
                            <>
-                              <table className="table mt-4 col-8">
-                                 <thead className="col-12">
+
+                           <div className="table-responsive">
+                              
+                           <table className="table mt-4">
+                                 <thead>
                                     <tr>
                                        <th scope="col">Nom</th>
                                        <th scope="col">Prix</th>
@@ -83,26 +120,23 @@ function NavBar() {
                                     </tr>
                                  </thead>
 
-                                 <tbody className="col-8">
+                                 <tbody>
                                     {CARD.map((item, index) => {
                                        return (
                                           <tr
                                              key={index}
-                                             style={{
-                                                height: "200px !important",
-                                                backgroundColor: "red",
-                                             }}
+                                            className="lineDeProduit"
                                           >
                                              <th scope="row">{item.title}</th>
-                                             <td>{item.price} FCFA</td>
-                                             <td>{}</td>
+                                             <td className="price">{item.price} FCFA</td>
+                                             <td style={{textTransform:"lowercase"}}>{item.category}</td>
                                              <td>
                                                 {" "}
                                                 <img
                                                    src={`/${item.img}`}
                                                    alt="image"
                                                    width={60}
-                                                   height={60}
+                                                   height={55}
                                                 />{" "}
                                              </td>
                                              <td className=" d-flex">
@@ -141,9 +175,8 @@ function NavBar() {
                                     })}
                                  </tbody>
                               </table>
-                              <div className="col-4">
-                                 <p className=" prixTotal">
-                                    total:
+                              <p className=" prixTotal">
+                                    total: {" "}
                                     {CARD.reduce((somme, item) => {
                                        return (
                                           somme +
@@ -153,9 +186,67 @@ function NavBar() {
                                     }, 0)}
                                     {" FCFA"}
                                  </p>
-                                 <button className="btn btn-warning">
+                           </div>
+                           <button
+                                    className="btn btn-warning col-sm-8 col-lg-2 ms-auto"
+                                    onClick={()=> setIsCommande(true)}
+                                 >
                                     Commandé
                                  </button>
+                              <div
+                                 className={`row ms-2 col-sm-12 col-lg-12 bg-white mt-5 pt-2 pb-2 ${
+                                    !isCommande && "d-none"
+                                 }`}
+                              >
+
+                                 <p className="text-black fs-5 ">
+                                    total:  {" "}
+                                    {CARD.reduce((somme, item) => {
+                                       return (
+                                          somme +
+                                          item.qte *
+                                             item.price.replaceAll(" ", "")
+                                       );
+                                    }, 0)}
+                                    {" FCFA"}
+                                 </p>
+                                 <form onSubmit={handleSubmit(onSubmit)}>
+                                    <input
+                                       type="text"
+                                       className="form-control"
+                                       placeholder="entrez votre nom"
+                                       {...register("Nom")}
+                                    />
+                                     <p className="text-danger">{errors.Nom?.message}</p>
+                                    <input
+                                       type="text"
+                                       className="form-control"
+                                       placeholder="entrez votre email"
+                                       {...register("email")}
+                                    />
+                                     <p className="text-danger">{errors.email?.message}</p>
+                                    <input
+                                       type="text"
+                                       className="form-control"
+                                       placeholder="entrez votre numero de telephone"
+                                       {...register("telephone")}
+                                    />
+                                     <p className="text-danger">{errors.telephone?.message}</p>
+                                    <input
+                                       type="text"
+                                       className="form-control"
+                                       placeholder="entrez votre ville"
+                                       {...register("ville")}
+                                    />
+                                    <p className="text-danger">{errors.ville?.message}</p>
+                                    <button
+                                       className="btn btn-success"
+                                       type="submit"
+                                      
+                                    >
+                                       Envoyer
+                                    </button>
+                                 </form>
                               </div>
                            </>
                         )}

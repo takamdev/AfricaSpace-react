@@ -1,6 +1,5 @@
 import React from 'react'
-import Footer from '../components/footer/Footer.jsx'
-import "./css/contact.css"
+import Footer from '../components/Footer.jsx'
 
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
@@ -9,7 +8,7 @@ import * as yup from "yup"
 const schema = yup
 .object({
     Nom: yup.string().required('ce champ est oubligatoire'),
-    email: yup.string().required('ce champ est oubligatoire') .matches(/^\+237\d{9}$/, "entrez un numéro valide"),
+    email: yup.string().required('ce champ est oubligatoire') .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,"entrez une address email valide"),
     Subject: yup.string().required('ce champ est oubligatoire'),
     Message: yup.string(),
   

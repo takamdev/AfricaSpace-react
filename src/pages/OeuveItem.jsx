@@ -1,9 +1,45 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 import { data } from "../../data.jsx";
 import { useStore } from "../../store.jsx";
-import "./OuvreItem.css"
+
+function reducer(note , action){
+   if(action.type==="e"){
+      switch(action.payload){
+         case 0 :
+            console.log(action.payload);
+            if(note.etat[0]===true){
+               return{etat:[false,false,false,false,false]}
+            }else{
+               return{etat:[true,false,false,false,false]}
+            }
+          
+         case 1 :
+            console.log(action.payload);
+            return{etat:[true,true,false,false,false]}  
+
+         case 2 :
+            console.log(action.payload);
+            return{etat:[true,true,true,false,false]}  
+
+         case 3 :
+            console.log(action.payload);
+            return{etat:[true,true,true,true,false]}  
+         case 4 :
+            console.log(action.payload);
+            return{etat:[true,true,true,true,true]}  
+       }
+   }
+
+
+   
+}
 function OeuveItem() {
+
+ 
+   
+   const [note , dispatch] = useReducer(reducer , {etat:[false,false,false,false,false]})
+
    let { id } = useParams();
    let produit = data[0].find(item=>item.id===id)
    const [commantaireValue , setCommantaireValue] = useState("")
@@ -12,7 +48,20 @@ function OeuveItem() {
    let CARD = useStore((state)=>state.CARD)
    
    function ubdateCommantaire(){
-      setCommantaire(v=>[...v, <p key={indexedDB}>{commantaireValue}</p>  ])
+      let userNote = note.etat
+      setCommantaire(v=>[...v, <div key={indexedDB}>
+    <p>{commantaireValue}</p>
+         <p>
+             {" "}
+               note:
+            {
+               userNote.map((item,index)=>{
+                  return  <span key={index}  className={`${item && "etoile"} note`}>★</span>
+               })
+            }
+
+         </p>
+      </div>  ])
    }
 
 
@@ -29,7 +78,7 @@ function OeuveItem() {
    }
    
    return (
-      <section className="container-fluid ms-auto me-auto">
+      <section className="container-fluid ms-auto me-auto mt-3">
          <div className="card mb-3 container">
             <div className="row g-0">
                <div className="col-md-4">
@@ -55,12 +104,14 @@ function OeuveItem() {
                         <p>
                            {" "}
                            NOTE:
-                           <span className="etoile note">★</span>
-                           <span className="etoile note">★</span>
-                           <span className="etoile note">★</span>
-                           <span className="etoile note">★</span>
-                           <span className="etoile note">★</span>
+                          {
+                           note.etat.map((item,index)=>{
+                              return  <span key={index} onClick={()=>dispatch({type:'e',payload:index})} className={`${note.etat[index] && "etoile"} note`}>★</span>
+                           })
+                          }
+
                         </p>
+                        
                         <p>
                            <button type="button" onClick={()=>addCart(produit)} className="ajoutPanier ">
                               Ajouter au Panier

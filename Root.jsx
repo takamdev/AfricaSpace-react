@@ -1,6 +1,11 @@
 import React from 'react'
-import NavBar from './src/components/navBar/jsx/NavBar.jsx'
+
+import NavBar from "./src/components/NavBar.jsx"
 import { Outlet } from 'react-router-dom'
+
+
+
+
 
 
 function Root() {
@@ -14,3 +19,6 @@ function Root() {
 }
 
 export default Root
+
+
+

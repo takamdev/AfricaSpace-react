@@ -1,0 +1,329 @@
+.mainContact {
+  position: relative;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  background-image: url("/public/images/home/NavBar/bgNavBar.jpg");
+}
+
+iframe {
+  background-image: initial;
+}
+
+form button {
+  width: 100px;
+}
+
+.form-setting {
+  background-image: inherit;
+  border-radius: 10px;
+}
+.form-setting textarea {
+  height: 70px;
+}
+.form-setting input {
+  height: 40px;
+}
+
+@media screen and (max-width: 500px) {
+  .card-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-set {
+    right: 5px;
+  }
+  iframe {
+    background-image: initial;
+    height: 200px;
+  }
+}
+.mainHome {
+  background-image: url(images/home/Carousel/bgCarousel.jpg) !important;
+  color: white;
+  padding: 0;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  font-weight: bold;
+}
+.mainHome .bordu {
+  background-image: url(images/home/Carousel/bordur.jpg);
+  padding: 10px;
+  height: 600px;
+  margin-bottom: 50px;
+}
+.mainHome .bordu #carouselExampleAutoplaying {
+  background-image: url(images/home/Carousel/bgCarousel.jpg);
+}
+.mainHome .bordu #carouselExampleAutoplaying img {
+  width: 100%;
+  height: 580px;
+  filter: brightness(70%);
+}
+.mainHome > h4 {
+  border-bottom: 2px solid white !important;
+}
+
+div.banier {
+  width: 100%;
+  height: 200px;
+  background-image: url("/public/images/Oeuvres/banier.jpg");
+}
+
+.ajoutPanier {
+  width: 200px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.etoile {
+  color: yellow;
+}
+
+@media screen and (max-width: 990px) {
+  .modal-body {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 430px) {
+  .modal-body {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .modal-body form {
+    padding: 40px 0px !important;
+  }
+}
+header {
+  z-index: 10000;
+}
+header .navbar {
+  background-image: url(/images/home/navBar/bgNavBar.jpg);
+  width: 100%;
+  transition: all ease-in-out 0.5s;
+}
+header .navbar .panier {
+  position: relative;
+}
+header .navbar .compteur {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  text-align: center;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+header .navbar input::-moz-placeholder {
+  opacity: 0.5;
+}
+header .navbar input::placeholder {
+  opacity: 0.5;
+}
+header .navbar a.active {
+  color: yellow !important;
+}
+header .navbar a:not(a.dropdown-item) {
+  font-weight: bold;
+  color: white;
+}
+header .navbar a:not(a.dropdown-item):visited {
+  color: white;
+}
+header .navbar a:not(a.dropdown-item):hover {
+  color: yellow;
+}
+header .navbar button.dropdown-item {
+  color: white;
+  font-weight: bold;
+}
+header .navbar button.dropdown-item:hover {
+  background-color: initial;
+  color: yellow;
+}
+@media screen and (max-width: 990px) {
+  header .panier {
+    position: absolute !important;
+    right: 35px !important;
+    top: 10px !important;
+  }
+  header .compteur {
+    position: absolute !important;
+    right: 25px !important;
+    top: 0px !important;
+  }
+}
+
+.modal-content {
+  background-image: url(/images/home/navBar/bgNavBar.jpg);
+}
+.modal-content .modal-title {
+  color: yellow;
+}
+.modal-content .btn-close {
+  color: white;
+}
+.modal-content .prixTotal {
+  color: yellow;
+  font-size: 30px;
+  position: absolute;
+  right: 40px;
+  top: 0;
+}
+
+.Modal {
+  margin-left: 17%;
+  max-width: 1500px;
+  height: auto;
+  width: 50%;
+  border-radius: 20px;
+  text-align: center;
+}
+.Modal form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 40px;
+}
+.Modal form h1 {
+  font-style: italic;
+  color: white;
+}
+.Modal form div {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+.Modal form div a {
+  border: solid 1px antiquewhite;
+  background-color: white;
+  border-radius: 5px;
+  width: 20px;
+}
+.Modal form p {
+  color: white;
+  filter: contrast(100%);
+}
+.Modal form label {
+  color: white;
+}
+.Modal form label a {
+  color: white;
+}
+.Modal form label:nth-child(3) {
+  margin-top: 20px;
+  opacity: 0.5;
+}
+.Modal form input {
+  width: 80%;
+  height: 40px;
+  outline: none;
+  padding-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: antiquewhite;
+}
+.Modal form .redirigerConnexion {
+  background-image: url(images/home/navBar/bgNavBar.jpg);
+  color: white;
+  border: none;
+  text-decoration-line: underline;
+  width: 230px;
+}
+.Modal form .soumet {
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 150px;
+  height: 40px;
+  font-style: italic;
+}
+
+h1 {
+  font-style: italic;
+  color: white;
+}
+
+@media screen and (max-width: 994px) {
+  .lineDeProduit {
+    background-color: white !important;
+    width: 100%;
+  }
+  .lineDeProduit th {
+    text-transform: lowercase;
+    font-size: 10px;
+  }
+  .lineDeProduit td {
+    margin-top: 20px;
+  }
+  .lineDeProduit td.price {
+    text-transform: lowercase;
+    font-size: 10px;
+  }
+  .lineDeProduit td img {
+    margin-top: inherit;
+  }
+}
+.card-body .note {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: black;
+  transform: scale(1.01);
+  border-radius: 10px;
+}
+.footer .active {
+  color: yellow;
+}
+.footer button {
+  transition: all ease-in-out 0.1s;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: none;
+  padding-top: 9.5px;
+}
+.footer button:hover {
+  color: yellow;
+}
+@media screen and (max-width: 890px) {
+  .footer button {
+    font-size: 13px;
+  }
+}
+.footer a {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+@media screen and (max-width: 890px) {
+  .footer a {
+    font-size: 13px;
+  }
+}
+.footer a:hover {
+  color: yellow;
+}
+
+.espaceArtiste .imgArtiste1,
+.espaceArtiste .imgArtiste2 {
+  height: 500px;
+  background-color: antiquewhite;
+}
+@media screen and (max-width: 400px) {
+  .espaceArtiste .div1 {
+    margin-top: 40px !important;
+  }
+}/*# sourceMappingURL=index.css.map */

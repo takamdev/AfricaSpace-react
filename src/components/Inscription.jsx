@@ -17,6 +17,7 @@ const schema = yup
 })
 .required()
 
+let storage = localStorage
 function Inscription() {
 
     const {
@@ -27,7 +28,11 @@ function Inscription() {
       } = useForm({
         resolver: yupResolver(schema),
       })
-      const onSubmit = (data) =>console.log(data);
+      const onSubmit = (data) =>{
+         storage.email= data.email
+         storage.password = data.password
+         console.log(storage);
+      }
 
   return (
     <div

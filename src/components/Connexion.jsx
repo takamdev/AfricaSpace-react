@@ -25,7 +25,14 @@ export default function Connexion() {
       } = useForm({
         resolver: yupResolver(schema),
       })
-      const onSubmit = (data) =>console.log(data);
+      const onSubmit = (data) =>{
+         if(data.email===localStorage.email && data.password===localStorage.password){
+           window.location.href ="/EspaceArtiste"
+         }else{
+            alert("verifier les information")
+
+         }
+      }
 
   
     return(

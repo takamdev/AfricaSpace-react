@@ -136,7 +136,7 @@ function Home() {
                         style={{
                            height: "600px",
                            borderImage:
-                              "url(images/home/Carousel/bordur.jpg) 10/10px",
+                              "url(/images/home/Carousel/bordur.jpg) 10/10px",
                         }}
                      >
                         <img

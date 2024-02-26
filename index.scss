@@ -48,7 +48,7 @@ form {
 // home
 
 .mainHome {
-   background-image: url(/images/home/Carousel/bgCarousel.jpg) !important;
+   background-image: url("/images/home/Carousel/bgCarousel.jpg") !important;
    color: white;
    padding: 0;
    background-repeat: repeat;
@@ -58,13 +58,13 @@ form {
    font-weight: bold;
 
    .bordu {
-      background-image: url(/images/home/Carousel/bordur.jpg);
+      background-image: url("/images/home/Carousel/bordur.jpg");
       padding: 10px;
       height: 600px;
       margin-bottom: 50px;
 
       #carouselExampleAutoplaying {
-         background-image: url(/images/home/Carousel/bgCarousel.jpg);
+         background-image: url("/images/home/Carousel/bgCarousel.jpg");
 
          img {
             width: 100%;
@@ -140,7 +140,7 @@ header {
          height: 20px;
          border-radius: 100%;
       }
-      background-image: url(/images/home/navBar/bgNavBar.jpg);
+      background-image: url("/images/home/navBar/bgNavBar.jpg");
       width: 100%;
       transition: all ease-in-out 0.5s;
 

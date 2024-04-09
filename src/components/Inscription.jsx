@@ -23,6 +23,7 @@ function Inscription() {
     const {
          
         register,
+        reset,
         handleSubmit,
         formState: { errors },
       } = useForm({
@@ -32,12 +33,13 @@ function Inscription() {
          storage.email= data.email
          storage.password = data.password
          navigateTo("/EspaceArtiste")     
-       
+         document.querySelector("#showModalInsc").click()
+         reset()
       }
 
   return (
     <div
-    className="modal fade  modal-xl showModal"
+    className="modal fade  modal-xl"
     id="creationDeCompte"
     data-bs-backdrop="static"
     data-bs-keyboard="false"
@@ -53,9 +55,10 @@ function Inscription() {
              </h1>
              <button
                 type="button"
-                className="btn btn-warning"
+                className="btn btn-warning showModal"
                 data-bs-dismiss="modal"
                 aria-label="Close"
+                id='showModalInsc'
              >
                 <i className="fa-solid fa-xmark"></i>
              </button>

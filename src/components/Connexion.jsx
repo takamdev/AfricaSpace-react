@@ -20,6 +20,7 @@ export default function Connexion() {
     const {
          
         register,
+        reset,
         handleSubmit,
         formState: { errors },
       } = useForm({
@@ -28,6 +29,8 @@ export default function Connexion() {
       const onSubmit = (data) =>{
          if(data.email===localStorage.email && data.password===localStorage.password){
             navigateTo("/EspaceArtiste")
+          document.querySelector("#showModalConex").click()
+          reset()
          }else{
             alert("verifier les information")
 
@@ -38,7 +41,7 @@ export default function Connexion() {
     return(
         // {/* <!-- Modal pour la connexion --> */}
          <div
-         className="modal fade modal-xl showModal"
+         className="modal fade modal-xl"
          id="connexion"
          data-bs-backdrop="static"
          data-bs-keyboard="false"
@@ -57,6 +60,7 @@ export default function Connexion() {
                      className="btn btn-warning"
                      data-bs-dismiss="modal"
                      aria-label="Close"
+                     id='showModalConex'
                   >
                      <i className="fa-solid fa-xmark"></i>
                   </button>

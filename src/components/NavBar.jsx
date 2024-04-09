@@ -24,6 +24,9 @@ const schema = yup
 
 
 function NavBar() {
+   const hide = ()=>{
+      document.querySelector("#navbarSupportedContent").classList.remove('show')
+   }
 
 
    const [isCommande, setIsCommande] = useState(false);
@@ -296,22 +299,22 @@ function NavBar() {
                      </span>
                   </button>
                   <div
-                     className="collapse navbar-collapse"
+                     className={`collapse navbar-collapse`}
                      id="navbarSupportedContent"
                   >
                      <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                           <NavLink className="nav-link " to="/">
+                           <NavLink className="nav-link " onClick={hide} to="/">
                               Acceuil
                            </NavLink>
                         </li>
                         <li className="nav-item">
-                           <NavLink className="nav-link" to="/Oeuvres">
+                           <NavLink className="nav-link" onClick={hide} to="/Oeuvres">
                               Oeuvres
                            </NavLink>
                         </li>
                         <li className="nav-item">
-                           <NavLink className="nav-link " to="/Contact">
+                           <NavLink className="nav-link " onClick={hide} to="/Contact">
                               Contact
                            </NavLink>
                         </li>
@@ -334,6 +337,7 @@ function NavBar() {
                               {/* <!-- Button trigger modal --> */}
                               <li>
                                  <button
+                                    onClick={hide}
                                     type="button"
                                     className="dropdown-item"
                                     data-bs-toggle="modal"
@@ -344,6 +348,7 @@ function NavBar() {
                               </li>
                               <li>
                                  <button
+                                    onClick={hide}
                                     type="button"
                                     className="dropdown-item"
                                     data-bs-toggle="modal"

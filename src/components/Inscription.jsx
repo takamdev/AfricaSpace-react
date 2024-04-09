@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
-
+import {useNavigate} from "react-router-dom"
 
 const schema = yup
 .object({
@@ -19,7 +19,7 @@ const schema = yup
 
 let storage = localStorage
 function Inscription() {
-
+ const navigateTo = useNavigate()
     const {
          
         register,
@@ -31,12 +31,13 @@ function Inscription() {
       const onSubmit = (data) =>{
          storage.email= data.email
          storage.password = data.password
-         console.log(storage);
+         navigateTo("/EspaceArtiste")     
+       
       }
 
   return (
     <div
-    className="modal fade  modal-xl"
+    className="modal fade  modal-xl showModal"
     id="creationDeCompte"
     data-bs-backdrop="static"
     data-bs-keyboard="false"

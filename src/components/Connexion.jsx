@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
-
+import {useNavigate} from "react-router-dom"
 
 const schema = yup
 .object({
@@ -16,7 +16,7 @@ const schema = yup
 
 
 export default function Connexion() {
-    
+   const navigateTo = useNavigate()
     const {
          
         register,
@@ -27,7 +27,7 @@ export default function Connexion() {
       })
       const onSubmit = (data) =>{
          if(data.email===localStorage.email && data.password===localStorage.password){
-           window.location.href ="/EspaceArtiste"
+            navigateTo("/EspaceArtiste")
          }else{
             alert("verifier les information")
 
@@ -38,7 +38,7 @@ export default function Connexion() {
     return(
         // {/* <!-- Modal pour la connexion --> */}
          <div
-         className="modal fade modal-xl"
+         className="modal fade modal-xl showModal"
          id="connexion"
          data-bs-backdrop="static"
          data-bs-keyboard="false"

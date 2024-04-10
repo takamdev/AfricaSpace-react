@@ -47,7 +47,7 @@ function NavBar() {
    function increQte(id) {
       let getProduit = CARD.find((item) => item.id === id);
 
-      if (getProduit.qte < 10) {
+      if (getProduit.qte < 1) {
          let newProduitList = CARD.map((item) => {
             return item.id === id ? { ...item, qte: item.qte + 1 } : item;
          });

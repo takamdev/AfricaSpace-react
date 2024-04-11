@@ -19,9 +19,9 @@ function addCart(Oeuvre){
 
 }
   return (
-    <div className="card mb-3" style={{height:"620px"}}>
-    <div className="W-100">
-    <img src={Oeuvre.img} className="card-img-top" alt="image" style={{width:"100%",height:"300px"}}/>
+    <div id="card" className="card mb-3" style={{height:"620px"}}>
+    <div className="W-100 overflow-hidden">
+    <img src={Oeuvre.img} className="card-img-top cardImage" alt="image" style={{width:"100%",height:"300px"}}/>
     </div>
     <div className="card-body" style={{position:"relative"}}>
       <h5 className="card-title" >{Oeuvre.title}</h5>

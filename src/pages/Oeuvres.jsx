@@ -18,10 +18,7 @@ function Oeuvres() {
 
    return (
       <main className="container-fluid">
-         <div
-            className="banier"
-           
-         ></div>
+         <div className="banier"></div>
 
          <div
             style={{

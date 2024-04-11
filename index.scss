@@ -79,7 +79,17 @@ form {
 }
 
 // home fin
-
+//card
+#card{
+   .cardImage{
+      transition: transform 0.3s ease-in-out;
+      &:hover{
+        transform: scale(1.2);
+       
+      }
+      
+   }
+}
 // oeuvres
 
 div.banier {

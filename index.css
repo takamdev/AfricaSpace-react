@@ -66,6 +66,13 @@ form button {
   border-bottom: 2px solid white !important;
 }
 
+#card .cardImage {
+  transition: transform 0.3s ease-in-out;
+}
+#card .cardImage:hover {
+  transform: scale(1.2);
+}
+
 div.banier {
   width: 100%;
   height: 200px;

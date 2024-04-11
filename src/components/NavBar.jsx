@@ -42,29 +42,6 @@ function NavBar() {
     })
     const onSubmit = (data) =>console.log(data);
      
-
-
-   function increQte(id) {
-      let getProduit = CARD.find((item) => item.id === id);
-
-      if (getProduit.qte < 1) {
-         let newProduitList = CARD.map((item) => {
-            return item.id === id ? { ...item, qte: item.qte + 1 } : item;
-         });
-         updateCart(newProduitList);
-      }
-   }
-
-   function decreQte(id) {
-      let getProduit = CARD.find((item) => item.id === id);
-
-      if (getProduit.qte > 1) {
-         let newProduitList = CARD.map((item) => {
-            return item.id === id ? { ...item, qte: item.qte - 1 } : item;
-         });
-         updateCart(newProduitList);
-      }
-   }
    function removeProduit(id) {
       let newProduitList = CARD.filter((item) => item.id !== id);
       updateCart(newProduitList);
@@ -142,30 +119,9 @@ function NavBar() {
                                                    height={55}
                                                 />{" "}
                                              </td>
-                                             <td className=" d-flex">
+                                             <td className=" d-flex justify-content-center align-items-center">
                                                 <button
-                                                   className="btn btn-success me-1"
-                                                   onClick={() =>
-                                                      increQte(item.id)
-                                                   }
-                                                >
-                                                   {" "}
-                                                   <AiOutlinePlus />
-                                                </button>
-                                                <p className="text-center mt-3 ">
-                                                   {item.qte}
-                                                </p>
-                                                <button
-                                                   className="btn btn-primary ms-1"
-                                                   onClick={() =>
-                                                      decreQte(item.id)
-                                                   }
-                                                >
-                                                   {" "}
-                                                   <MdOutlineRemove />
-                                                </button>
-                                                <button
-                                                   className="btn btn-danger ms-5 me-1"
+                                                   className="btn btn-danger pt-3 pb-3"
                                                    onClick={() =>
                                                       removeProduit(item.id)
                                                    }
